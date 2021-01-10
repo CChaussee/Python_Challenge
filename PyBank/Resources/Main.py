@@ -9,13 +9,11 @@ total_months = 0
 net_total = 0
 great_increase = 0
 great_decrease = 0
-prev_month = 0
-dictonary_change = {} 
 #reading csv path
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-   # print(header)
+
 
 
 #Loop, The total number of months included in the dataset
