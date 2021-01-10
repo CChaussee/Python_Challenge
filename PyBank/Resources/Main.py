@@ -19,7 +19,7 @@ with open(csvpath) as csvfile:
 #Loop, The total number of months included in the dataset
     for row in csvreader:
         total_months = total_months + 1
-        net_total = net_total + 1
+        net_total = net_total + int(row[1])
 
         
 
@@ -41,7 +41,7 @@ with open(csvpath) as csvfile:
 print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
-print("Total:", net_total)
+print("Total: $", net_total)
 #print("Average Change:")
 #print("Greatest Increase in Profits:")
 #print("Greatest Decrease in Profits:"
