@@ -34,7 +34,7 @@ with open(csvpath) as csvfile:
 #stackoverflow to learn how to format percentage
 print("Election Results")
 print("--------------------")
-print("Total Votes:")
+print("Total Votes:", votes)
 print("--------------------")
 print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1))
 print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
@@ -43,3 +43,5 @@ print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
 print("Winner : Kahn")
 print("--------------------")
+
+
