@@ -9,22 +9,17 @@ total_months = 0
 net_total = 0
 great_increase = 0
 great_decrease = 0
-current_total= 0
-difference = 0
+current_amount = 0
+prev_month = 0
+total_amount = 0
 #reading csv path
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-
-
-
 #Loop
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
-
-
-
 
 
 
@@ -42,6 +37,6 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
-print("Average Change:", average_change)
+#print("Average Change:", average_change)
 #print("Greatest Increase in Profits:")
 #print("Greatest Decrease in Profits:"
