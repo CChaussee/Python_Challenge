@@ -9,6 +9,8 @@ total_months = 0
 net_total = 0
 great_increase = 0
 great_decrease = 0
+current_total= 0
+difference = 0
 #reading csv path
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
@@ -16,12 +18,10 @@ with open(csvpath) as csvfile:
 
 
 
-#Loop, The total number of months included in the dataset
+#Loop
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
-        average_change = net_total / total_months
-        
 
 
 
