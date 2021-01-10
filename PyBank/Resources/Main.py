@@ -20,14 +20,14 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
-
+        average_change = net_total / total_months
         
 
 
 
 
 
-#The net total amount of "Profit/Losses" over the entire period
+
 
 
 #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
@@ -42,6 +42,6 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
-#print("Average Change:")
+print("Average Change:", average_change)
 #print("Greatest Increase in Profits:")
 #print("Greatest Decrease in Profits:"
