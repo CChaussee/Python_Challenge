@@ -1,19 +1,31 @@
 #importing modules
 import os
 import csv
-#creating csv path
-csvpath = 'budget_data.csv'
-#reading csv path
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile)
-    header = next(csvreader)
 
+#creating csv path
+csvpath ='budget_data.csv'
 #Variables
 total_months = 0
 net_total = 0
 great_increase = 0
-great_decrease =0
-#The total number of months included in the dataset
+great_decrease = 0
+prev_month = 0
+dictonary_change = {} 
+#reading csv path
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)
+   # print(header)
+
+
+#Loop, The total number of months included in the dataset
+    for row in csvreader:
+        total_months = total_months + 1
+
+        
+
+
+
 
 
 #The net total amount of "Profit/Losses" over the entire period
@@ -27,10 +39,10 @@ great_decrease =0
 
 #The greatest decrease in losses (date and amount) over the entire period
 
-#print("Financial Analysis")
-#print("------------------")
-#print("Total Months")
+print("Financial Analysis")
+print("------------------")
+print("Total Months", total_months)
 #print("Total")
 #print("Average Change")
 #print("Greatest Increase in Profits")
-#print("Greatest Decrease in Profits")
+#print("Greatest Decrease in Profits"
