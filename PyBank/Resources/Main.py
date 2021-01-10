@@ -12,6 +12,7 @@ great_decrease = 0
 current_amount = 0
 prev_month = 0
 total_amount = 0
+theloop = True
 #reading csv path
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
@@ -20,6 +21,11 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
+        if theloop == False:        
+            current_amount = prev_month - int(row[1])
+            total_amount = total_amount + current_amount
+        prev_month = int(row[1])
+average_change = total_amount / total_months
 
 
 
@@ -37,6 +43,6 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
-#print("Average Change:", average_change)
+print("Average Change:", average_change)
 #print("Greatest Increase in Profits:")
 #print("Greatest Decrease in Profits:"
