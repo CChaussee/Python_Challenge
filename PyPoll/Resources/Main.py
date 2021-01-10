@@ -45,3 +45,17 @@ print("Winner : Kahn")
 print("--------------------")
 
 
+#write to .txt file
+with open(csvpath, 'w') as csvbook:
+    
+    print("Election Results", file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Total Votes:", votes, file=csvbook)
+    print("--------------------", file=csvbook)
+    print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
+    print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2),file=csvbook)
+    print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3),file=csvbook)
+    print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4),file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Winner : Kahn",file=csvbook)
+    print("--------------------",file=csvbook)
