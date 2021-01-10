@@ -16,6 +16,12 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
     #print(header)
+#loop
+    for row in csvreader:
+        votes = votes + 1
+        if row[2] == Candidates[0]:
+            option1 = option1 + 1
+        
 
 
 
@@ -24,10 +30,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:")
 print("--------------------")
-#print("Candidate 1 results")
-#print("Candidate 2 resutls")
-#print("Candidate 3 results")
-#print("Candidate 4 results")
+print(Candidates[0], ":", (option1/votes)*100, (option1,)
+print("Candidate 2 resutls")
+print("Candidate 3 results")
+print("Candidate 4 results")
 print("--------------------")
-print("Winner :")
+print("Winner :" Candidates[0])
 print("--------------------")
