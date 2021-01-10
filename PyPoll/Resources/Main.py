@@ -31,15 +31,15 @@ with open(csvpath) as csvfile:
 
 
 
-
+#stackoverflow to learn how to format percentage
 print("Election Results")
 print("--------------------")
 print("Total Votes:")
 print("--------------------")
-print(Candidates[0], ":", (option1/votes)*100, (option1))
-print(Candidates[1], ":", (option2/votes)*100, (option2))
-print(Candidates[2], ":", (option3/votes)*100, (option3))
-print(Candidates[3], ":", (option4/votes)*100, (option4))
+print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1))
+print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
+print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3))
+print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
 print("Winner : Kahn")
 print("--------------------")
