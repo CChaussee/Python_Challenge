@@ -21,6 +21,9 @@ with open(csvpath) as csvfile:
         votes = votes + 1
         if row[2] == Candidates[0]:
             option1 = option1 + 1
+        elif row[2] == Candidates[1]:
+            option2 = option2 + 1
+
         
 
 
@@ -30,7 +33,7 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:")
 print("--------------------")
-print(Candidates[0], ":", (option1/votes)*100, (option1,)
+print(Candidates[0], ":", (option1/votes)*100, (option1)
 print("Candidate 2 resutls")
 print("Candidate 3 results")
 print("Candidate 4 results")
