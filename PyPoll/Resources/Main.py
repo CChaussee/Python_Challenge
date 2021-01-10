@@ -23,6 +23,8 @@ with open(csvpath) as csvfile:
             option1 = option1 + 1
         elif row[2] == Candidates[1]:
             option2 = option2 + 1
+        elif row[2] == Candidates[2]:
+            option3 = option3 + 1
 
         
 
