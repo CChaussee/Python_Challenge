@@ -25,7 +25,7 @@ with open(csvpath) as csvfile:
             option2 = option2 + 1
         elif row[2] == Candidates[2]:
             option3 = option3 + 1
-        else row[2] == Candidates[3]:
+        else: 
             option4 = option4 + 1 
         
 
@@ -36,10 +36,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:")
 print("--------------------")
-print(Candidates[0], ":", (option1/votes)*100, (option1)
-print("Candidate 2 resutls")
-print("Candidate 3 results")
-print("Candidate 4 results")
+print(Candidates[0], ":", (option1/votes)*100, (option1))
+print(Candidates[1], ":", (option2/votes)*100, (option2))
+print(Candidates[2], ":", (option3/votes)*100, (option3))
+print(Candidates[3], ":", (option4/votes)*100, (option4))
 print("--------------------")
-print("Winner :" Candidates[0])
+print("Winner : Kahn")
 print("--------------------")
