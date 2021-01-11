@@ -3,12 +3,8 @@ import os
 import csv
 #create csv path
 csvpath = 'election_data.csv'
-#canidate list/indexes
-indexes = [1,2,3,4]
+#canidate list
 Candidates = ["Khan", "Correy" , "Li", "O'Tolley" ]
-#zip
-Election = list(zip(indexes, Candidates))
-
 #defining variables
 option1= 0
 option2 = 0
@@ -19,15 +15,14 @@ votes = 0
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-    #print(header)
 #loop
     for row in csvreader:
         votes = votes + 1
-        if row[2] == Election[1]:
+        if row[2] == Candidates[0]:
             option1 = option1 + 1
-        elif row[2] == Election[2]:
+        elif row[2] == Candidates[1]:
             option2 = option2 + 1
-        elif row[2] == Election[3]:
+        elif row[2] == Candidates[2]:
             option3 = option3 + 1
         else: 
             option4 = option4 + 1 
@@ -40,13 +35,26 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-print(Election[0], ":", "{0:.0%}".format(option1/votes), (option1))
-print(Election[1], ":", "{0:.0%}".format(option2/votes), (option2))
-print(Election[2], ":", "{0:.0%}".format(option3/votes), (option3))
-print(Election[3], ":", "{0:.0%}".format(option4/votes), (option4))
+print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1))
+print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
+print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3))
+print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
 print("Winner : Kahn") 
 print("--------------------")
 
 
 #write to .txt file, there has to be an easier way to do this
+with open(analysis.txt ,'w') as analysis.txt:
+    with open(csvpath, 'w') as csvbook:
+    print("Election Results", file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Total Votes:", votes, file=csvbook)
+    print("--------------------", file=csvbook)
+    print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
+    print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2),file=csvbook)
+    print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3),file=csvbook)
+    print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4),file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Winner : Kahn",file=csvbook)
+    print("--------------------",file=csvbook) 
