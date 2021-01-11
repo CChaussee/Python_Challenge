@@ -19,10 +19,13 @@ date = []
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-#Loop for total months/net total
+#Loop for total months/ net total
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
+#googled python functions        
+        date.append(row[0])
+        total.append(row[1])
     max_date = max(date)
     min_date = min(date)
 
