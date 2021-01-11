@@ -4,7 +4,7 @@ import csv
 
 #creating csv path
 csvpath ='budget_data.csv'
-#Variables
+#Variables/storing variables
 total_months = 0
 net_total = 0
 great_increase = 0
@@ -12,14 +12,21 @@ great_decrease = 0
 average_change = 0
 max_date = 0
 min_date = 0
+total = []
+date = []
+
 #reading csv path
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-#Loop
+#Loop for total months/net total
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1])
+    max_date = max(date)
+    min_date = min(date)
+
+    
         
 
 
@@ -40,5 +47,5 @@ print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
 print("Average Change:", average_change)
-print("Greatest Increase in Profits:", great_increase)
-print("Greatest Decrease in Profits:", great_decrease)
+print("Greatest Increase in Profits:", max_date, "$" , great_increase)
+print("Greatest Decrease in Profits:", min_date, "$" , great_decrease)
