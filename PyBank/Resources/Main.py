@@ -14,6 +14,7 @@ max_date = 0
 min_date = 0
 total = []
 date = []
+prev_month = 0
 
 #reading csv path
 with open(csvpath) as csvfile:
@@ -28,9 +29,10 @@ with open(csvpath) as csvfile:
         total.append(row[1])
     max_date = max(date)
     min_date = min(date)
-
-    
-        
+#trying to find changes in total through loop
+    for change in total:
+        changes = int(total+1) - int(total)
+                
 
 
 
