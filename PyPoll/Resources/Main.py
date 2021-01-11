@@ -3,7 +3,8 @@ import os
 import csv
 #create csv path
 csvpath = 'election_data.csv'
-#canidate list
+#canidate list/indexs
+indexes = [1,2,3,4]
 Candidates = ["Khan", "Correy" , "Li", "O'Tolley" ]
 #defining variables
 option1= 0
@@ -19,11 +20,11 @@ with open(csvpath) as csvfile:
 #loop
     for row in csvreader:
         votes = votes + 1
-        if row[2] == Candidates[0]:
+        if row[2] == indexes[1]:
             option1 = option1 + 1
-        elif row[2] == Candidates[1]:
+        elif row[2] == indexes[2]:
             option2 = option2 + 1
-        elif row[2] == Candidates[2]:
+        elif row[2] == indexes[3]:
             option3 = option3 + 1
         else: 
             option4 = option4 + 1 
@@ -41,7 +42,7 @@ print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
 print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3))
 print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
-print("Winner : Kahn")
+print("Winner : Kahn") 
 print("--------------------")
 
 
