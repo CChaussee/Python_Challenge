@@ -30,8 +30,9 @@ with open(csvpath) as csvfile:
     max_date = max(date)
     min_date = min(date)
 #trying to find changes in total through loop
-    for change in total:
-        changes = int(total+1) - int(total)
+    for change in len(total):
+        changes = (total[change+1]) - (total[change])
+        
                 
 
 
