@@ -8,27 +8,7 @@ csvpath ='budget_data.csv'
 with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
-#Variables/storing variables
-    total_months = 0
-    net_total = 0
-    great_increase = 0
-    great_decrease = 0
-    average_change = 0
-    max_date = 0
-    min_date = 0
-    total_revenue = 0
-    date = []
-    prev_row = 0
-    theloop = True
-    current = 0
-#Loop for total months/ net total
-    for row in csvreader:
-        total_months = total_months + 1
-        net_total = net_total + int(row[1]) 
-        date.append(row[0])
-        if theloop == False:
-            current = prev_row - int(row[1])
-            total_revenue = total_revenue + current
+
         
 
 
