@@ -7,7 +7,7 @@ csvpath = 'election_data.csv'
 indexes = [1,2,3,4]
 Candidates = ["Khan", "Correy" , "Li", "O'Tolley" ]
 #zip
-Election = zip(indexes, Candidates)
+Election = list(zip(indexes, Candidates))
 
 #defining variables
 option1= 0
@@ -40,10 +40,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-print(Election[1], ":", "{0:.0%}".format(option1/votes), (option1))
-print(Election[2], ":", "{0:.0%}".format(option2/votes), (option2))
-print(Election[3], ":", "{0:.0%}".format(option3/votes), (option3))
-print(Election[4], ":", "{0:.0%}".format(option4/votes), (option4))
+print(Election[0], ":", "{0:.0%}".format(option1/votes), (option1))
+print(Election[1], ":", "{0:.0%}".format(option2/votes), (option2))
+print(Election[2], ":", "{0:.0%}".format(option3/votes), (option3))
+print(Election[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
 print("Winner : Kahn") 
 print("--------------------")
