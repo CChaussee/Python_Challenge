@@ -9,40 +9,51 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile)
     header = next(csvreader)
 #Variables/storing variables
-total_months = 0
-net_total = 0
-great_increase = 0
-great_decrease = 0
-average_change = 0
-max_date = 0
-min_date = 0
-total_revenue = []
-date = []
-prev_row = 0
+    total_months = 0
+    net_total = 0
+    great_increase = 0
+    great_decrease = 0
+    average_change = 0
+    max_date = 0
+    min_date = 0
+    total_revenue = 0
+    date = []
+    prev_row = 0
+    theloop = True
+    current = 0
 #Loop for total months/ net total
     for row in csvreader:
         total_months = total_months + 1
         net_total = net_total + int(row[1]) 
         date.append(row[0])
-        changes.append(row[0])
-        if date == "January 2010":     
-            continue 
-        else:
-            changes = prev_row + 1
-average_change = sum(changes)/total_months
+        if theloop == False:
+            current = prev_row - int(row[1])
+            total_revenue = total_revenue + current
+        
+
+
 #forgot about append function        
        
 max_date = max(date)
 min_date = min(date)
 #trying to find changes in total through loop
-average_change = monthly_changes/ total_months
+
     
 
         
         
                 
 
-
+#write to .txt file (copied from Pypoll)
+analysis.txt = 
+with open(analysis.txt ,'w') as analysis.txt:
+    print( "Financial Analysis", file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Total Months:", total_months, file=csvbook)
+    print("Total : $", net_total, file=csvbook)
+    print("Average Change",file=csvbook)
+    print("Greatest Increase in Profits",file=csvbook)
+    print("Greatest Increase in Profits",file=csvbook)
 
 
 
