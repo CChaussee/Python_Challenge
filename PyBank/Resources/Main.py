@@ -4,6 +4,10 @@ import csv
 
 #creating csv path
 csvpath ='budget_data.csv'
+#reading csv path
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)
 #Variables/storing variables
 total_months = 0
 net_total = 0
@@ -12,26 +16,29 @@ great_decrease = 0
 average_change = 0
 max_date = 0
 min_date = 0
-total = []
+total_revenue = []
 date = []
-prev_month = 0
-
-#reading csv path
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile)
-    header = next(csvreader)
+prev_row = 0
 #Loop for total months/ net total
     for row in csvreader:
         total_months = total_months + 1
-        net_total = net_total + int(row[1])
-#googled python functions        
+        net_total = net_total + int(row[1]) 
         date.append(row[0])
-        total.append(row[1])
-    max_date = max(date)
-    min_date = min(date)
+        changes.append(row[0])
+        if date == "January 2010":     
+            continue 
+        else:
+            changes = prev_row + 1
+average_change = sum(changes)/total_months
+#forgot about append function        
+       
+max_date = max(date)
+min_date = min(date)
 #trying to find changes in total through loop
-    for change in len(total):
-        changes = (total[change+1]) - (total[change])
+average_change = monthly_changes/ total_months
+    
+
+        
         
                 
 
