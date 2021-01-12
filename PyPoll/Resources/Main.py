@@ -20,16 +20,17 @@ with open(csvpath) as csvfile:
         votes = votes + 1
         if row[2] not in Candidates:
             Candidates.append(row[2])
-            Voter_count.append(row[2])
+            Voter_count.append(1)
             index = Candidates.index(row[2])
         else:
             index = Candidates.index(row[2])
+            Voter_count[index] + 1
 winner = max(Voter_count)        
 #trying to make my voter count list into an interger, thanks Google
-tester1 = Voter_count
-stringit = ''.join(tester1)
+#tester1 = Voter_count
+#stringit = ''.join(tester1)
 #print(stringit)
-#percent_votes =  (votes/(stringit)*100)
+percent_votes =  (votes/(Voter_count)*100)
 
 
 
@@ -38,10 +39,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-#print(Candidates[0], ":", percent_votes)
-#print(Candidates[1], ":", percent_votes)
-#print(Candidates[2], ":", percent_votes)
-#print(Candidates[3], ":", percent_votes)
+print(Candidates[0], ":", percent_votes)
+print(Candidates[1], ":", percent_votes)
+print(Candidates[2], ":", percent_votes)
+print(Candidates[3], ":", percent_votes)
 print("--------------------")
 print("Winner :", winner) 
 print("--------------------")
