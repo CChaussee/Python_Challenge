@@ -18,13 +18,12 @@ with open(csvpath) as csvfile:
 #loop
     for row in csvreader:
         votes = votes + 1
-        if Candidates not in row[1]:
+        if row[1] not in Candidates:
             Candidates.append(row[1])
             Voter_count.append(row[1])
             index = Candidates.index(row[1])
         else:
             index = Candidates.index(row[1])
-            Voter_count = Voter_count + 1
 winner = max(Voter_count)        
 
 
@@ -34,10 +33,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-#print(Candidates[0], ":", "{0:.0%}".format, Voter_count)
-#print(Candidates[1], ":", "{0:.0%}".format, Voter_count)
-#print(Candidates[2], ":", "{0:.0%}".format, Voter_count)
-#print(Candidates[3], ":", "{0:.0%}".format, Voter_count)
+print(Candidates[0], ":", "{0:.0%}".format, Voter_count)
+print(Candidates[1], ":", "{0:.0%}".format, Voter_count)
+print(Candidates[2], ":", "{0:.0%}".format, Voter_count)
+print(Candidates[3], ":", "{0:.0%}".format, Voter_count)
 print("--------------------")
 #print("Winner :", winner) 
 print("--------------------")
