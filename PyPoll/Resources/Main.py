@@ -4,25 +4,25 @@ import csv
 #create csv path
 csvpath = 'election_data.csv'
 #canidate list
-#defining a function
-def election(Results):
-    Candidates = []
+Candidates = []
 #votes list
-    Voter_count = []
+Voter_count = []
 #defining variables
-    winner = max(Voter_count)
-    votes = 0
+winner = max(Voter_count)
+votes = 0
+ 
 #read csv path
-    with open(csvpath) as csvfile:
-        csvreader = csv.reader(csvfile)
-        header = next(csvreader)
+with open(csvpath) as csvfile:
+    csvreader = csv.reader(csvfile)
+    header = next(csvreader)
 
 #loop
-        for row in csvreader:
-            if Result in row[0]:
-                Candidates.append(row[0])
-                Voter_count.append(row[0])
-    return list(set(Candidates))
+    for row in csvreader:
+        votes = votes + 1
+        if Candidates not in row[1]:
+            Candidates.append(row[1])
+            Voter_count.append(row[1])
+return list(set(Candidates))
 
         
 
@@ -31,7 +31,7 @@ def election(Results):
 #stackoverflow to learn how to format percentage
 print("Election Results")
 print("--------------------")
-#print("Total Votes:", votes)
+print("Total Votes:", votes)
 print("--------------------")
 #print(Candidates[0], ":", "{0:.0%}".format, Voter_count)
 #print(Candidates[1], ":", "{0:.0%}".format, Voter_count)
