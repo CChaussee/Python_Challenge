@@ -4,28 +4,25 @@ import csv
 #create csv path
 csvpath = 'election_data.csv'
 #canidate list
-Candidates = []
+#defining a function
+def election(Results):
+    Candidates = []
 #votes list
-Voter_count = []
+    Voter_count = []
 #defining variables
-#option1= 0
-#option2 = 0
-#option3 = 0
-#option4 = 0
-votes = 0
+    winner = max(Voter_count)
+    votes = 0
 #read csv path
-with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile)
-    header = next(csvreader)
+    with open(csvpath) as csvfile:
+        csvreader = csv.reader(csvfile)
+        header = next(csvreader)
+
 #loop
-    for row in csvreader:
-        votes = votes + 1
-        if row[2] not in Candidates:
-            Candidates.append(row[2])
-            Voter_count.append(1)
-        else: 
-           Candidates.index(row[2])
-           Voter_count[index] + 1
+        for row in csvreader:
+            if Result in row[0]:
+                Candidates.append(row[0])
+                Voter_count.append(row[0])
+    return list(set(Candidates))
 
         
 
@@ -34,14 +31,14 @@ with open(csvpath) as csvfile:
 #stackoverflow to learn how to format percentage
 print("Election Results")
 print("--------------------")
-print("Total Votes:", votes)
+#print("Total Votes:", votes)
 print("--------------------")
-print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1))
-print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
-print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3))
-print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
+#print(Candidates[0], ":", "{0:.0%}".format, Voter_count)
+#print(Candidates[1], ":", "{0:.0%}".format, Voter_count)
+#print(Candidates[2], ":", "{0:.0%}".format, Voter_count)
+#print(Candidates[3], ":", "{0:.0%}".format, Voter_count)
 print("--------------------")
-print("Winner :", Candidates[0]) 
+#print("Winner :", winner) 
 print("--------------------")
 
 
