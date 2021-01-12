@@ -25,6 +25,10 @@ with open(csvpath) as csvfile:
         else:
             index = Candidates.index(row[2])
 winner = max(Voter_count)        
+#trying to make my voter count list into an interger, thanks Google
+vote_index= ["0" , "1", "2", "3"]
+percent_votes = .join(vote_index)
+percent_votes =  (votes/(int(Voter_count))*100)
 
 
 
@@ -33,26 +37,25 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-print(Candidates[0], ":", "{0:.0%}".format, Voter_count)
-print(Candidates[1], ":", "{0:.0%}".format, Voter_count)
-print(Candidates[2], ":", "{0:.0%}".format, Voter_count)
-print(Candidates[3], ":", "{0:.0%}".format, Voter_count)
+#print(Candidates[0], ":", percent_votes)
+#print(Candidates[1], ":", percent_votes)
+#print(Candidates[2], ":", percent_votes)
+#print(Candidates[3], ":", percent_votes)
 print("--------------------")
-#print("Winner :", winner) 
+print("Winner :", winner) 
 print("--------------------")
 
 
 #write to .txt file, there has to be an easier way to do this
 #with open(analysis.txt ,'w') as analysis.txt:
  #   with open(csvpath, 'w') as csvbook:
-   # print("Election Results", file=csvbook)
-  #  print("--------------------",file=csvbook)
+  #  print("Election Results", file=csvbook)
+   # print("--------------------",file=csvbook)
     #print("Total Votes:", votes, file=csvbook)
-    #print("--------------------", file=csvbook)
-    #print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
-    #print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2),file=csvbook)
-    #print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3),file=csvbook)
-    #print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4),file=csvbook)
+    #print("--------------------", file=csvbook)print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
+    #print(Candidates[1], ":", ), (option2),file=csvbook)
+    #print(Candidates[2], ":", , (option3),file=csvbook)
+    #print(Candidates[3], ":", , (option4),file=csvbook)
     #print("--------------------",file=csvbook)
-    #print("Winner : Kahn",file=csvbook)
+    #print("Winner :", winner,file=csvbook)
     #print("--------------------",file=csvbook) 
