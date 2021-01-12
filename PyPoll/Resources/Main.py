@@ -8,7 +8,6 @@ Candidates = []
 #votes list
 Voter_count = []
 #defining variables
-winner = max(Voter_count)
 votes = 0
  
 #read csv path
@@ -22,9 +21,11 @@ with open(csvpath) as csvfile:
         if Candidates not in row[1]:
             Candidates.append(row[1])
             Voter_count.append(row[1])
-return list(set(Candidates))
-
-        
+            index = Candidates.index(row[1])
+        else:
+            index = Candidates.index(row[1])
+            Voter_count = Voter_count + 1
+winner = max(Voter_count)        
 
 
 
