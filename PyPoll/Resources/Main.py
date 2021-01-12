@@ -9,6 +9,7 @@ Candidates = []
 Voter_count = []
 #defining variables
 votes = 0
+percent_votes = []
  
 #read csv path
 with open(csvpath) as csvfile:
@@ -30,7 +31,7 @@ winner = max(Voter_count)
 #tester1 = Voter_count
 #stringit = ''.join(tester1)
 #print(stringit)
-percent_votes =  (votes/(Voter_count)*100)
+#percent_votes =  (votes/(Voter_count)*100)
 
 
 
