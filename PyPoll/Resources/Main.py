@@ -50,15 +50,15 @@ print("--------------------")
 
 
 #write to .txt file, there has to be an easier way to do this
-#with open(analysis.txt ,'w') as analysis.txt:
- #   with open(csvpath, 'w') as csvbook:
-  #  print("Election Results", file=csvbook)
-   # print("--------------------",file=csvbook)
-    #print("Total Votes:", votes, file=csvbook)
-    #print("--------------------", file=csvbook)print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
-    #print(Candidates[1], ":", ), (option2),file=csvbook)
-    #print(Candidates[2], ":", , (option3),file=csvbook)
-    #print(Candidates[3], ":", , (option4),file=csvbook)
-    #print("--------------------",file=csvbook)
-    #print("Winner :", winner,file=csvbook)
-    #print("--------------------",file=csvbook) 
+with open(analysis.txt ,'w') as analysis.txt:
+    with open(csvpath, 'w') as csvbook:
+    print("Election Results", file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Total Votes:", votes, file=csvbook)
+    print("--------------------", file=csvbook)print(Candidates[0], ":",file=csvbook)
+    print(Candidates[1], ":", ),file=csvbook)
+    print(Candidates[2], ":", file=csvbook)
+    print(Candidates[3], ":", file=csvbook)
+    print("--------------------",file=csvbook)
+    print("Winner :", winner,file=csvbook)
+    print("--------------------",file=csvbook) 
