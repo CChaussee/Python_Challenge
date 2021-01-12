@@ -4,12 +4,14 @@ import csv
 #create csv path
 csvpath = 'election_data.csv'
 #canidate list
-Candidates = ["Khan", "Correy" , "Li", "O'Tolley" ]
+Candidates = []
+#votes list
+Voter_count = []
 #defining variables
-option1= 0
-option2 = 0
-option3 = 0
-option4 = 0
+#option1= 0
+#option2 = 0
+#option3 = 0
+#option4 = 0
 votes = 0
 #read csv path
 with open(csvpath) as csvfile:
@@ -18,14 +20,13 @@ with open(csvpath) as csvfile:
 #loop
     for row in csvreader:
         votes = votes + 1
-        if row[2] == Candidates[0]:
-            option1 = option1 + 1
-        elif row[2] == Candidates[1]:
-            option2 = option2 + 1
-        elif row[2] == Candidates[2]:
-            option3 = option3 + 1
+        if row[2] not in Candidates:
+            Candidates.append(row[2])
+            Voter_count.append(1)
         else: 
-            option4 = option4 + 1 
+           Candidates.index(row[2])
+           Voter_count[index] + 1
+
         
 
 
@@ -40,21 +41,21 @@ print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2))
 print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3))
 print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4))
 print("--------------------")
-print("Winner : Kahn") 
+print("Winner :", Candidates[0]) 
 print("--------------------")
 
 
 #write to .txt file, there has to be an easier way to do this
-with open(analysis.txt ,'w') as analysis.txt:
-    with open(csvpath, 'w') as csvbook:
-    print("Election Results", file=csvbook)
-    print("--------------------",file=csvbook)
-    print("Total Votes:", votes, file=csvbook)
-    print("--------------------", file=csvbook)
-    print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
-    print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2),file=csvbook)
-    print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3),file=csvbook)
-    print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4),file=csvbook)
-    print("--------------------",file=csvbook)
-    print("Winner : Kahn",file=csvbook)
-    print("--------------------",file=csvbook) 
+#with open(analysis.txt ,'w') as analysis.txt:
+ #   with open(csvpath, 'w') as csvbook:
+   # print("Election Results", file=csvbook)
+  #  print("--------------------",file=csvbook)
+    #print("Total Votes:", votes, file=csvbook)
+    #print("--------------------", file=csvbook)
+    #print(Candidates[0], ":", "{0:.0%}".format(option1/votes), (option1),file=csvbook)
+    #print(Candidates[1], ":", "{0:.0%}".format(option2/votes), (option2),file=csvbook)
+    #print(Candidates[2], ":", "{0:.0%}".format(option3/votes), (option3),file=csvbook)
+    #print(Candidates[3], ":", "{0:.0%}".format(option4/votes), (option4),file=csvbook)
+    #print("--------------------",file=csvbook)
+    #print("Winner : Kahn",file=csvbook)
+    #print("--------------------",file=csvbook) 
