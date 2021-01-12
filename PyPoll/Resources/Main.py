@@ -26,9 +26,10 @@ with open(csvpath) as csvfile:
             index = Candidates.index(row[2])
 winner = max(Voter_count)        
 #trying to make my voter count list into an interger, thanks Google
-vote_index= ["0" , "1", "2", "3"]
-percent_votes = .join(vote_index)
-percent_votes =  (votes/(int(Voter_count))*100)
+tester1 = Voter_count
+stringit = ''.join(tester1)
+#print(stringit)
+#percent_votes =  (votes/(stringit)*100)
 
 
 
