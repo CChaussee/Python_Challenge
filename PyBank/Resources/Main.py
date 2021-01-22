@@ -34,11 +34,11 @@ with open(csvpath) as csvfile:
     previous_total = int(row[1])
     average_change = sum(changes)/len(changes)
 #The greatest increase in profits (date and amount) over the entire period
-
-
+  greatest_increase = max(changes)
+  #max_date = 
 #The greatest decrease in losses (date and amount) over the entire period    
-
-        
+  greatest_decrease = min(changes)
+  #min_date =    
 #write .txt file        
                 
 
@@ -54,9 +54,9 @@ print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
-print("Average Change:", average_change)
-#print("Greatest Increase in Profits:", max_date, "$" , great_increase)
-#print("Greatest Decrease in Profits:", min_date, "$" , great_decrease)
+print("Average Change: $", round(average_change))
+print("Greatest Increase in Profits:", "$" , greatest_increase)
+print("Greatest Decrease in Profits:", "$" , greatest_decrease)
 
 #Financial Analysis
 #----------------------------
