@@ -4,52 +4,64 @@ import csv
 
 #creating csv path
 csvpath ='budget_data.csv'
+#variables
+total_months = 0
+net_total = 0    
+date = []
+changes = []
+total_changes = 0
 #reading csv path
 with open(csvpath) as csvfile:
-    csvreader = csv.reader(csvfile)
-    header = next(csvreader)
-
-        
-
-
-#forgot about append function        
-       
-max_date = max(date)
-min_date = min(date)
-#trying to find changes in total through loop
-
-    
-
-        
-        
-                
-
-#write to .txt file (copied from Pypoll)
-analysis.txt = 
-with open(analysis.txt ,'w') as analysis.txt:
-    print( "Financial Analysis", file=csvbook)
-    print("--------------------",file=csvbook)
-    print("Total Months:", total_months, file=csvbook)
-    print("Total : $", net_total, file=csvbook)
-    print("Average Change",file=csvbook)
-    print("Greatest Increase in Profits",file=csvbook)
-    print("Greatest Increase in Profits",file=csvbook)
-
-
-
-
+  csvreader = csv.reader(csvfile)
+  header = next(csvreader)
+  first = next(csvreader)
+  previous_total =  int(first[1])
+  for row in csvreader:
+  #total number of months
+    total_months = total_months +1
+  #net total
+    net_total = net_total + int(row[1])
+      
 #Calculate the changes in "Profit/Losses" over the entire period, then find the average of those changes
-
-
+    current_total = int(row[1])
+    
+    if current_total == previous_total:
+      changes = 0  
+      
+    else:
+      changes.append(current_total - previous_total)  
+       
+    previous_total = int(row[1])
+    average_change = sum(changes)/len(changes)
 #The greatest increase in profits (date and amount) over the entire period
 
 
-#The greatest decrease in losses (date and amount) over the entire period
+#The greatest decrease in losses (date and amount) over the entire period    
+
+        
+#write .txt file        
+                
+
+
+
+
+
+
+
+
 
 print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
 print("Average Change:", average_change)
-print("Greatest Increase in Profits:", max_date, "$" , great_increase)
-print("Greatest Decrease in Profits:", min_date, "$" , great_decrease)
+#print("Greatest Increase in Profits:", max_date, "$" , great_increase)
+#print("Greatest Decrease in Profits:", min_date, "$" , great_decrease)
+
+#Financial Analysis
+#----------------------------
+#Total Months: 86
+#Total: $38382578
+#Average  Change: $-2315.12
+#Greatest Increase in Profits: Feb-2012 ($1926159)
+#Greatest Decrease in Profits: Sep-2013 ($-2196167)
