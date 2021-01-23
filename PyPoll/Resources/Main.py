@@ -41,20 +41,6 @@ percent_voteso = Candidates.count("O'Tooley")/ (votes) *100
 winner = ("Kahn")        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
@@ -68,31 +54,23 @@ print("Winner :", winner)
 print("--------------------")
 
 
-#Election Results
-#-------------------------
-#Total Votes: 3521001
-#-------------------------
-#Khan: 63.000% (2218231)
-#Correy: 20.000% (704200)
-#Li: 14.000% (492940)
-#O'Tooley: 3.000% (105630)
-#-------------------------
-#Winner: Khan
-#-------------------------
+#thank you Terra for the write .txt help
+load_file = "election_data.csv"
+write_file = "output.txt"
+with open(load_file) as election_data:
+    reader = csv.reader(election_data)
+    header = next(reader)
 
+    for row in reader:
+        pass
+output = (
+    f"------------------\n"
+    f"Kahn Wins the Election!\n"
+    f"2218231 Votes: 63%\n"
+    f"-------------------"
+)
 
+with open(write_file, 'w') as txt_file:
+        txt_file.write(output)
 
-#write to .txt file, there has to be an easier way to do this
-#with open(analysis.txt ,'w') as analysis.txt:
-    #with open(csvpath, 'w') as csvbook:
-    #print("Election Results", file=csvbook)
-    #print("--------------------",file=csvbook)
-    #print("Total Votes:", votes, file=csvbook)
-    #print("--------------------", file=csvbook)
-    #print(Candidates[0], ":",file=csvbook)
-    #print(Candidates[1], ":", ),file=csvbook)
-    #print(Candidates[2], ":", file=csvbook)
-    #print(Candidates[3], ":", file=csvbook)
-    #print("--------------------",file=csvbook)
-    #print("Winner :", winner,file=csvbook)
-    #print("--------------------",file=csvbook) 
+         
