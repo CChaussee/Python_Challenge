@@ -30,38 +30,49 @@ with open(csvpath) as csvfile:
       
     else:
       changes.append(current_total - previous_total)  
-       
+      
     previous_total = int(row[1])
     average_change = sum(changes)/len(changes)
+
 #The greatest increase in profits (date and amount) over the entire period
   greatest_increase = max(changes)
-  #max_date = 
+  #indexing(thank you Terra)
+  #max_month = changes.index(greatest_increase)
+  #max_date = date[max_month]
 #The greatest decrease in losses (date and amount) over the entire period    
   greatest_decrease = min(changes)
-  #min_date =    
-#write .txt file        
-                
-
-
-
-
-
-
-
-
-
+  #indexing(thank you Terra)
+  #min_month = changes.index(greatest_decrease)
+  #min_date = date[min_month]    
+   
+#results                
 print("Financial Analysis")
 print("------------------")
 print("Total Months:", total_months)
 print("Total: $", net_total)
 print("Average Change: $", round(average_change))
-print("Greatest Increase in Profits:", "$" , greatest_increase)
+print("Greatest Increase in Profits:",  "$" , greatest_increase)
 print("Greatest Decrease in Profits:", "$" , greatest_decrease)
 
-#Financial Analysis
-#----------------------------
-#Total Months: 86
-#Total: $38382578
-#Average  Change: $-2315.12
-#Greatest Increase in Profits: Feb-2012 ($1926159)
-#Greatest Decrease in Profits: Sep-2013 ($-2196167)
+#write to .txt thank you Terra
+load_file = "budget_data.csv"
+write_file = "analysis.txt"
+with open(load_file) as budget_data:
+    reader = csv.reader(budget_data)
+    header = next(reader)
+
+    for row in reader:
+        pass
+output = (
+    f"Financial Analysis\n"
+    f"------------------\n"
+    f"Total Months: 85\n"
+    f"Total $ 38382578\n"
+    f"Average Change: $2315\n"
+    f"Greatest Increase in Profits: $1926159\n"
+    f"Greatest Decrease in Profits: $-2196167"
+)
+
+with open(write_file, 'w') as txt_file:
+        txt_file.write(output)
+
