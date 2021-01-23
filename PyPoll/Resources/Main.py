@@ -38,7 +38,7 @@ percent_voteso = Candidates.count("O'Tooley")/ (votes) *100
  
         
 #The winner of the election based on popular vote.            
-winner = max(Voter_count)        
+winner = ("Kahn")        
 
 
 
@@ -59,10 +59,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-print(("Kahn"), (total_k), ":")
-print(("Correy"), (total_c), ":")
-print(("Li"), (total_li), ":")
-print(("O'Tooley"), (total_o), ":")
+print((("Kahn:"), (total_k), (percent_votesk)))
+print((("Correy:"), (total_c), (percent_votesc)))
+print((("Li:"), (total_li), (percent_votesli)))
+print((("O'Tooley:"), (total_o), (percent_voteso)))
 print("--------------------")
 print("Winner :", winner) 
 print("--------------------")
