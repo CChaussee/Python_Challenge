@@ -23,7 +23,7 @@ with open(csvpath) as csvfile:
 #The total number of votes cast 
         votes = votes + 1
         Candidates.append(row[2])
-        Voter_count.append(row[1])
+        Voter_count.append(row[2])
             
 #The total number of votes each candidate won   
 total_k = Candidates.count("Khan")
@@ -31,10 +31,10 @@ total_c = Candidates.count("Correy")
 total_li = Candidates.count("Li")
 total_o = Candidates.count("O'Tolley") 
 #The percentage of votes each candidate won
-percent_votesk = Candidates.count("Khan")/ votes * 100
-percent_votesc = Candidates.count("Correy")/ votes * 100
-percent_votesli = Candidates.count("Li")/ votes *100
-percent_voteso = Candidates.count("O'Tolley")/ votes *100 
+percent_votesk = Candidates.count("Khan")/ (votes) * 100
+percent_votesc = Candidates.count("Correy")/ (votes) * 100
+percent_votesli = Candidates.count("Li")/ (votes) *100
+percent_voteso = Candidates.count("O'Tolley")/ (votes) *100 
  
         
 #The winner of the election based on popular vote.            
@@ -59,10 +59,10 @@ print("Election Results")
 print("--------------------")
 print("Total Votes:", votes)
 print("--------------------")
-print(total_k), ":", (percent_votesk)
-print(total_c), ":", (percent_votesc)
-print(total_li), ":", (percent_votesli)
-print(total_o), ":", (percent_voteso)
+print("Kahn"), (total_k), ":"
+print("Correy"), (total_c), ":"
+print("Li"), (total_li), ":"
+print("O'Tooley"), (total_o), ":"
 print("--------------------")
 print("Winner :", winner) 
 print("--------------------")
